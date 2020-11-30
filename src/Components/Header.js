@@ -4,7 +4,7 @@ import "../App.css";
 import { ImLinkedin, ImGithub } from "react-icons/im";
 
 export default function Header({ pageIndex, setPageIndex }) {
-  const links = ["About", "Testimonial", "Services", "Projects", "Contact"];
+  const links = ["About", "Services", "Projects", "Contact"];
   return (
     <div className="header">
       <div
@@ -46,12 +46,6 @@ export default function Header({ pageIndex, setPageIndex }) {
           alignItems: "center",
         }}
       >
-        {/* <div className="gradient">
-          <ImLinkedin className="gradientIcon" id="linkedinLink" />
-        </div>
-        <a className="iconLink" href="/">
-          <ImGithub id="gradientIcon" className="fa-github" />
-        </a> */}
         <a
           className="iconLink"
           target="_blank"
