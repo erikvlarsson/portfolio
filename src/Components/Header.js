@@ -1,12 +1,10 @@
 import React from "react";
-import ReactLogo from "../Components/ReactLogo";
 import "../App.css";
-import { ImLinkedin, ImGithub } from "react-icons/im";
 
 export default function Header({ pageIndex, setPageIndex }) {
-  const links = ["About", "Services", "Projects", "Contact"];
+  const links = ["Home", "Work", "About", "More"];
   return (
-    <div className="header">
+    <header>
       <div
         style={{
           flex: 1,
@@ -16,12 +14,29 @@ export default function Header({ pageIndex, setPageIndex }) {
           alignItems: "center",
         }}
       >
-        <div style={{ display: "flex", alignItems: "center" }}>
-          <ReactLogo />
-        </div>
+        <img
+          src="http://www.jonathanpatterson.com/images/j-icon.svg"
+          style={{ height: 40 }}
+        />
         <div id="erikLarsson">
-          <div className="gradientText">erik</div>
-          <div className="gradientText">larsson</div>
+          <div
+            // className="gradientText"
+            style={{ fontWeight: 600, fontSize: 19, letterSpacing: 1.4 }}
+          >
+            ERIK LARSSON
+          </div>
+          <div
+            // className="gradientText"
+            style={{
+              fontWeight: 400,
+              fontSize: 13,
+              letterSpacing: 0.4,
+              paddingTop: 4,
+              paddingBottom: 4,
+            }}
+          >
+            UX Developer & Designer
+          </div>
         </div>
       </div>
       {links.map((link, i) => {
@@ -38,7 +53,7 @@ export default function Header({ pageIndex, setPageIndex }) {
           </div>
         );
       })}
-      <div
+      {/* <div
         style={{
           flex: 1,
           display: "flex",
@@ -60,7 +75,7 @@ export default function Header({ pageIndex, setPageIndex }) {
         >
           <i className="fab fa-github gradientText" />
         </a>
-      </div>
-    </div>
+      </div> */}
+    </header>
   );
 }
