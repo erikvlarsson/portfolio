@@ -2,8 +2,12 @@ import React from "react";
 
 export default function About() {
   return (
-    <section className="about">
+    <section
+      className="about"
+      style={{ background: "linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.1))" }}
+    >
       <div className="textContent">
+        <h1>About Me</h1>
         <h2>
           I enjoy building beautiful and user-friendly apps for web and mobile.
         </h2>

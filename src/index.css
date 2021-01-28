@@ -24,21 +24,21 @@ code {
 
 h1 {
   font-size: 50px;
+  margin: 0 0 50px;
+  line-height: 50px;
+}
+
+h4 {
   margin: 0;
 }
 
 p {
   font-size: 12px;
+  margin: 0;
 }
 
 .textContent {
   max-width: 500px;
   text-align: left;
   /* border: 1px solid grey; */
-}
-
-section {
-  width: 100%;
-  padding: 0 5%;
-  min-height: 100vh;
 }

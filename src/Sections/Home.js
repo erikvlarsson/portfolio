@@ -16,9 +16,11 @@ export default function Home() {
           src="http://www.jonathanpatterson.com/images/j-icon.svg"
           style={{ height: 50 }}
         />
-        <h1>Hey. I'm Erik.</h1>
-        <h1 className="gradientText purpleGradient">
-          I craft user-friendly experiences with lean, scalable code.
+        <h1>
+          <div style={{ marginBottom: "10px" }}>Hey. I'm Erik.</div>
+          <div className="gradientText purpleGradient">
+            I craft user-friendly experiences with lean, scalable code.
+          </div>
         </h1>
         <div style={{ border: "5px dotted rgba(0,0,0,0.3)", padding: 5 }}></div>
         <div
