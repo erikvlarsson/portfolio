@@ -8,7 +8,7 @@ import "./Sections.css";
 
 import Home from "./Sections/Home";
 import Work from "./Sections/Work";
-import Projects from "./Sections/Projects";
+import SelectedWorks from "./Sections/SelectedWorks";
 import Experience from "./Sections/Experience";
 import About from "./Sections/About";
 import Skills from "./Sections/Skills";
@@ -29,9 +29,9 @@ function App() {
         {/* <Header pageIndex={pageIndex} setPageIndex={setPageIndex} /> */}
         {/* <Content pageIndex={pageIndex} /> */}
         {/* <Spinner /> */}
-        <Projects />
         <Home />
-        <Work />
+        <SelectedWorks />
+        {/* <Work /> */}
         <Experience />
         <Skills />
         <About />

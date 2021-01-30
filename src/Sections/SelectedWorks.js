@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { BsChevronRight, BsChevronLeft } from "react-icons/bs";
 
-const projects = [
+const allProjects = [
   {
     i: 0,
     name: "My first website",
@@ -57,63 +57,114 @@ const projects = [
   },
 ];
 
-export default function Work() {
+export default function SelectedWorks() {
   const [index, setIndex] = useState(4);
-  const [selectedProjects, setSelectedProjects] = useState(
-    projects.slice(2, 6)
-  );
+  const [projects, setProjects] = useState(allProjects);
+  const wrapperRef = useRef(null);
+  const targetSlideRef = useRef(null);
 
-  const changeIndex = (newIndex) => {
-    const maxIndex = projects.length - 1;
-
-    let x = newIndex;
-    if (newIndex > maxIndex) {
+  const cleanIndex = (index) => {
+    const maxIndex = allProjects.length - 1;
+    let x = index;
+    if (index > maxIndex) {
       x = 0;
-    } else if (newIndex < 0) {
-      x = maxIndex;
+    } else if (index < 0) {
+      // -1 = maxIndex
+      // -2 = maxIndex - 1
+      // -3 = maxIndex - 2
+      x = 1 + maxIndex + index;
     }
-    setIndex(x);
-
-    let newArray = [];
-    for (let i = -2; i < 2; i++) {
-      let correctedIndex = x + i;
-      if (correctedIndex < 0) {
-        correctedIndex = correctedIndex + maxIndex + 1;
-      } else if (correctedIndex > maxIndex) {
-        correctedIndex = correctedIndex - maxIndex - 1;
-      }
-      newArray.push(projects[correctedIndex]);
-    }
-    setSelectedProjects(newArray);
+    return x;
   };
+
+  const handleScroll = async (newIndex) => {
+    const projectsCopy = [...projects];
+
+    // make sure there are at least two left of target and one to the right
+    const start = projects[0].i;
+    const end = projects[projects.length - 1].i;
+
+    // if reaching end
+    if (newIndex >= end) {
+      // await scrollToTargetSlide("auto");
+      projectsCopy.push(allProjects[cleanIndex(end + 1)]);
+      setProjects(projectsCopy);
+      await setIndex(cleanIndex(newIndex));
+      const didScroll = await scrollToTargetSlide("smooth");
+      // alert(didScroll);
+    }
+    // if going left
+    // else if (newIndex <= start) {
+    //   projectsCopy.unshift(allProjects[cleanIndex(start - 1)]);
+    //   projectsCopy.pop();
+    // }
+    // scrollToTargetSlide("auto");
+
+    // scroll silently
+
+    // projectsCopy.push(allProjects[cleanIndex(lastIndex + 1)]);
+    // projectsCopy.unshift(allProjects[cleanIndex(firstIndex - 1)]);
+  };
+
+  const scrollToTargetSlide = async (behavior) => {
+    let { width } = wrapperRef.current.getBoundingClientRect();
+
+    const targetSlide = targetSlideRef.current;
+    const wrapper = wrapperRef.current;
+
+    if (wrapper && targetSlide) {
+      await wrapper.scrollTo({
+        top: 0,
+        left: targetSlide.offsetLeft - width / 2,
+        behavior: behavior,
+      });
+      return true;
+    } else {
+      return false;
+    }
+  };
+
+  useEffect(() => {
+    // alert("yes!");
+  });
 
   return (
     <section className="work">
-      <h1>Selected Works</h1>
+      <h1>Selected Works — {index}</h1>
+      <h1>{JSON.stringify(projects.map((p) => p.i))}</h1>
       <div className="selectedProjects">
         <div className="topLayer">
-          <div className="arrow" onClick={() => changeIndex(index - 1)}>
+          <div className="arrow" onClick={() => handleScroll(index - 1)}>
             <BsChevronLeft />
           </div>
-          <div className="projectInfo" style={{ flex: 1 }}>
-            <div style={{ maxWidth: "50%", padding: 50 }}>
-              <p className="robotic">
-                {projects[index].year} • {projects[index].location}
-              </p>
-              <h1>{projects[index].name}</h1>
-              <p style={{ height: 50 }}>{projects[index].description}</p>
-            </div>
-          </div>
-          <div className="arrow" onClick={() => changeIndex(index + 1)}>
+          <div style={{ flex: 1 }}></div>
+          <div className="arrow" onClick={() => handleScroll(index + 1)}>
             <BsChevronRight />
           </div>
         </div>
-        <div className="carousel">
-          {selectedProjects.map((project, i) => {
+        <div
+          className="scrollableWrapper"
+          // onScroll={handleScroll}
+          onMomentumScrollEnd={() => alert("scroleld!")}
+          ref={wrapperRef}
+        >
+          <div
+            style={{
+              height: "100px",
+              width: "100vw",
+              border: "4px solid red",
+              display: "inline-block",
+            }}
+          ></div>
+          {projects.map((project, i) => {
             let className =
               project.i === index ? "project projectActive" : "project";
             return (
-              <div className={className} onClick={() => setIndex(i)}>
+              <div
+                className={className}
+                ref={project.i === index ? targetSlideRef : null}
+                onClick={() => handleScroll(i)}
+              >
                 <img
                   src={project.imgUrl}
                   style={{ height: 200, width: "100%" }}
@@ -148,13 +199,21 @@ export default function Work() {
               </div>
             );
           })}
+          <div
+            style={{
+              height: "100px",
+              width: "100vw",
+              border: "4px solid red",
+              display: "inline-block",
+            }}
+          ></div>
         </div>
       </div>
       <div className="selectedProjectsFooter">
-        {projects.map((p, i) => {
+        {allProjects.map((p, i) => {
           let className = i === index ? "dot active" : "dot";
           return (
-            <div className={className} onClick={() => changeIndex(i)}>
+            <div className={className} onClick={() => handleScroll(i)}>
               <div />
             </div>
           );
