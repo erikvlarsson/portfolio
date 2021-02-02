@@ -124,8 +124,8 @@ export default function SelectedWorks() {
 
   return (
     <section className="work">
-      <h1 className="gradientTextSilver">What I have been up to</h1>
       <div className="projects">
+        <h2 className="gradientTextSilver">Featured Projects</h2>
         <div className="topLayer">
           <div className="arrow" onClick={() => handleScroll(index - 1)}>
             <BsChevronLeft />
@@ -161,7 +161,7 @@ export default function SelectedWorks() {
                     <p className="robotic">
                       {project.year} ∙ {project.location}
                     </p>
-                    <h2>{project.name}</h2>
+                    <h3>{project.name}</h3>
                     <p style={{ fontSize: 12 }} id="what">
                       {project.description}
                     </p>
@@ -171,16 +171,16 @@ export default function SelectedWorks() {
             );
           })}
         </div>
-      </div>
-      <div className="selectedProjectsFooter">
-        {allProjects.map((p, i) => {
-          let className = i === index ? "dot active" : "dot";
-          return (
-            <div className={className} onClick={() => handleScroll(i)}>
-              <div />
-            </div>
-          );
-        })}
+        <div className="selectedProjectsFooter">
+          {allProjects.map((p, i) => {
+            let className = i === index ? "dot active" : "dot";
+            return (
+              <div className={className} onClick={() => handleScroll(i)}>
+                <div />
+              </div>
+            );
+          })}
+        </div>
       </div>
     </section>
   );

@@ -20,13 +20,6 @@ export default function Contact() {
         target="_blank"
         href="http://www.google.com"
         className="purpleGradient"
-        style={{
-          padding: "5px",
-          display: "flex",
-          borderRadius: 25,
-          boxShadow:
-            "inset 0 0 2px rgba(255,255,255,0.2), 0 5px 5px -3px black",
-        }}
       >
         <div
           style={{
@@ -37,9 +30,10 @@ export default function Contact() {
             boxShadow: "0 0 2px rgba(255,255,255,0.1), inset 0 0 4px black",
           }}
         >
-          <h2 style={{ margin: 0 }}>erikvlarsson1@gmail.com</h2>
+          erikvlarsson1@gmail.com
         </div>
       </a>
+      <img src="signature.png" style={{ margin: "0 auto", width: "200px" }} />
     </section>
   );
 }

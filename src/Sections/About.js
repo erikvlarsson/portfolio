@@ -7,11 +7,22 @@ export default function About() {
       className="about"
       style={{ background: "linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.1))" }}
     >
-      <img src="face.png" style={{ width: "40vw" }} />
-      <div style={{ display: "inline-block", width: "40vw", padding: "5vw" }}>
-        <h1 className="gradientTextSilver" style={{ margin: 0 }}>
+      <div id="iconLinks">
+        <div>
+          <AiFillLinkedin />
+        </div>
+        <div>
+          <AiFillFacebook />
+        </div>
+        <div>
+          <AiFillGithub />
+        </div>
+      </div>
+      <img src="face.png" style={{ width: "35vw" }} />
+      <div style={{ display: "inline-block", width: "40vw", padding: "0 5vw" }}>
+        <h2 className="gradientTextSilver" style={{ margin: 0 }}>
           About
-        </h1>
+        </h2>
         <p className="robotic" style={{ marginBottom: "20px" }}>
           UI / UX DESIGNER & DEVELOPER
         </p>
@@ -50,20 +61,6 @@ export default function About() {
             Advocate for remote work, user data privacy and the open web
           </li>
         </ul>
-        <div
-          className="iconLinks"
-          style={{ justifyContent: "center", marginTop: "30px" }}
-        >
-          <div>
-            <AiFillLinkedin />
-          </div>
-          <div>
-            <AiFillFacebook />
-          </div>
-          <div>
-            <AiFillGithub />
-          </div>
-        </div>
       </div>
     </section>
   );

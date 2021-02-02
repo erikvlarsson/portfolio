@@ -51,7 +51,7 @@ const skills = [
 
 export default function Skills() {
   return (
-    <section>
+    <section className="skills">
       <div className="textContent">
         {/* <h1 className="gradientText purpleGradient">Skills & Specialization</h1> */}
         <h1 className="gradientTextPurple">Skills & Specialization</h1>
