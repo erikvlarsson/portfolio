@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  AiFillDribbbleCircle,
-  AiFillFacebook,
-  AiFillGithub,
-  AiFillLinkedin,
-  AiFillMail,
-} from "react-icons/ai";
+import { AiFillFacebook, AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 import ReactLogo from "./ReactLogo";
 
 export default function Footer() {

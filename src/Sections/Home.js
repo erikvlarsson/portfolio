@@ -3,12 +3,7 @@ import Header from "../Components/Header";
 
 export default function Home() {
   return (
-    <section
-      style={{
-        display: "flex",
-        alignItems: "center",
-      }}
-    >
+    <section className="home">
       {/* <Header /> */}
       {/* <h1>I'm Erik, a UX Designer from Malmö.</h1> */}
       <div className="textContent">
@@ -17,8 +12,10 @@ export default function Home() {
           style={{ height: 50 }}
         />
         <h1>
-          <div style={{ marginBottom: "10px" }}>Hey. I'm Erik.</div>
-          <div className="gradientText purpleGradient">
+          <div style={{ marginBottom: "10px" }} className="gradientTextSilver">
+            Hey. I'm Erik.
+          </div>
+          <div className="gradientTextPurple">
             I craft user-friendly experiences with lean, scalable code.
           </div>
         </h1>

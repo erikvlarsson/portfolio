@@ -7,7 +7,6 @@ import "./App.css";
 import "./Sections.css";
 
 import Home from "./Sections/Home";
-import Work from "./Sections/Work";
 import SelectedWorks from "./Sections/SelectedWorks";
 import Experience from "./Sections/Experience";
 import About from "./Sections/About";
@@ -31,10 +30,10 @@ function App() {
         {/* <Spinner /> */}
         <Home />
         <SelectedWorks />
+        <About />
         {/* <Work /> */}
         <Experience />
         <Skills />
-        <About />
         {/* <More /> */}
         <Contact />
         <Footer />

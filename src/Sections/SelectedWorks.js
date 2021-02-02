@@ -1,5 +1,6 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useCallback } from "react";
 import { BsChevronRight, BsChevronLeft } from "react-icons/bs";
+import Wave from "../Components/Wave";
 
 const allProjects = [
   {
@@ -10,58 +11,84 @@ const allProjects = [
     year: 2014,
     location: "Malmö, Sweden",
     imgUrl:
-      "https://c1.wallpaperflare.com/preview/702/848/843/wall-number-one-minimal.jpg",
+      "https://i.pinimg.com/originals/0d/84/c3/0d84c3f9be1fc2e07377893e80bee3a0.png",
+    logoUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/368px-Google_2015_logo.svg.png",
   },
   {
     i: 1,
-    name: "Arborot AB",
+    name: "Frontend Developer",
     description: "What I did at Arborot AB",
     year: 2020,
     location: "Malmö, Sweden",
-    imgUrl: "https://wallpaperaccess.com/full/2495762.png",
+    imgUrl:
+      "https://99designs-blog.imgix.net/blog/wp-content/uploads/2018/04/2x-en.png?auto=format&q=60&fit=max&w=930",
+    logoUrl: "http://www.arborot.se/arborotLogo.png",
   },
   {
     i: 2,
-    name: "Strategic 9",
+    name: "Consultant",
     description: "What I did at S9",
     year: 2020,
     location: "Malmö, Sweden",
     imgUrl:
-      "https://thumbs.dreamstime.com/b/three-number-engraved-stone-77082667.jpg",
+      "https://www.appdesignvault.com/wp-content/uploads/2013/06/flat-ui-login-iphone-1.png",
+    logoUrl:
+      "https://jobtip.imgix.net/images/img_5d1f1ffb8208d.png?h=610&w=400",
   },
   {
     i: 3,
-    name: "Portfolio Website",
-    description: "Building this shit",
+    name: "Freelance",
+    description:
+      "Worked as a freelance consultant in building and optimizing small company websites.",
     year: 2021,
     location: "Malmö, Sweden",
     imgUrl: "https://wallpapercave.com/wp/wp2163915.jpg",
+    logoUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/368px-Google_2015_logo.svg.png",
   },
   {
     i: 4,
-    name: "Portfolio Website",
+    name: "Portfolio Designer",
     description: "Building this shit",
     year: 2021,
     location: "Malmö, Sweden",
     imgUrl:
-      "https://thumbs.dreamstime.com/z/spring-number-five-colorful-flower-vector-illustration-template-banners-wallpaper-vintage-spring-number-five-colorful-119295360.jpg",
+      "https://i.pinimg.com/originals/98/d4/ca/98d4ca2ca0f81ae9dafae122427be1c3.png",
+    logoUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/368px-Google_2015_logo.svg.png",
   },
   {
     i: 5,
-    name: "Portfolio Website",
+    name: "Gameboard",
     description: "Building this shit",
     year: 2021,
     location: "Malmö, Sweden",
     imgUrl:
       "https://cutewallpaper.org/21/number-6-wallpaper/Six-Wallpapers-Wallpaper-Cave.jpg",
+    logoUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/368px-Google_2015_logo.svg.png",
   },
 ];
 
 export default function SelectedWorks() {
-  const [index, setIndex] = useState(4);
+  const [index, setIndex] = useState(0);
+  const [prevIndex, setPrevIndex] = useState(null);
   const [projects, setProjects] = useState(allProjects);
   const wrapperRef = useRef(null);
   const targetSlideRef = useRef(null);
+
+  useEffect(() => {
+    const end = projects.length - 1;
+    if (prevIndex !== index) {
+      if (Math.abs(prevIndex - index) >= end) {
+        scrollToTargetSlide("auto");
+      } else {
+        scrollToTargetSlide("smooth");
+      }
+    }
+    setPrevIndex(index);
+  }, [index]);
 
   const cleanIndex = (index) => {
     const maxIndex = allProjects.length - 1;
@@ -69,44 +96,16 @@ export default function SelectedWorks() {
     if (index > maxIndex) {
       x = 0;
     } else if (index < 0) {
-      // -1 = maxIndex
-      // -2 = maxIndex - 1
-      // -3 = maxIndex - 2
-      x = 1 + maxIndex + index;
+      x = maxIndex;
     }
     return x;
   };
 
   const handleScroll = async (newIndex) => {
-    const projectsCopy = [...projects];
-
-    // make sure there are at least two left of target and one to the right
-    const start = projects[0].i;
-    const end = projects[projects.length - 1].i;
-
-    // if reaching end
-    if (newIndex >= end) {
-      // await scrollToTargetSlide("auto");
-      projectsCopy.push(allProjects[cleanIndex(end + 1)]);
-      setProjects(projectsCopy);
-      await setIndex(cleanIndex(newIndex));
-      const didScroll = await scrollToTargetSlide("smooth");
-      // alert(didScroll);
-    }
-    // if going left
-    // else if (newIndex <= start) {
-    //   projectsCopy.unshift(allProjects[cleanIndex(start - 1)]);
-    //   projectsCopy.pop();
-    // }
-    // scrollToTargetSlide("auto");
-
-    // scroll silently
-
-    // projectsCopy.push(allProjects[cleanIndex(lastIndex + 1)]);
-    // projectsCopy.unshift(allProjects[cleanIndex(firstIndex - 1)]);
+    setIndex(cleanIndex(newIndex));
   };
 
-  const scrollToTargetSlide = async (behavior) => {
+  const scrollToTargetSlide = useCallback(async (behavior) => {
     let { width } = wrapperRef.current.getBoundingClientRect();
 
     const targetSlide = targetSlideRef.current;
@@ -115,24 +114,18 @@ export default function SelectedWorks() {
     if (wrapper && targetSlide) {
       await wrapper.scrollTo({
         top: 0,
-        left: targetSlide.offsetLeft - width / 2,
+        left: index * width,
         behavior: behavior,
       });
-      return true;
     } else {
       return false;
     }
-  };
-
-  useEffect(() => {
-    // alert("yes!");
   });
 
   return (
     <section className="work">
-      <h1>Selected Works — {index}</h1>
-      <h1>{JSON.stringify(projects.map((p) => p.i))}</h1>
-      <div className="selectedProjects">
+      <h1 className="gradientTextSilver">What I have been up to</h1>
+      <div className="projects">
         <div className="topLayer">
           <div className="arrow" onClick={() => handleScroll(index - 1)}>
             <BsChevronLeft />
@@ -144,18 +137,9 @@ export default function SelectedWorks() {
         </div>
         <div
           className="scrollableWrapper"
-          // onScroll={handleScroll}
           onMomentumScrollEnd={() => alert("scroleld!")}
           ref={wrapperRef}
         >
-          <div
-            style={{
-              height: "100px",
-              width: "100vw",
-              border: "4px solid red",
-              display: "inline-block",
-            }}
-          ></div>
           {projects.map((project, i) => {
             let className =
               project.i === index ? "project projectActive" : "project";
@@ -165,48 +149,27 @@ export default function SelectedWorks() {
                 ref={project.i === index ? targetSlideRef : null}
                 onClick={() => handleScroll(i)}
               >
-                <img
-                  src={project.imgUrl}
-                  style={{ height: 200, width: "100%" }}
-                />
-                <div id="projectDescription">
-                  <p
-                    style={{
-                      textTransform: "uppercase",
-                      fontSize: 8,
-                      letterSpacing: 1,
-                    }}
-                  >
-                    {project.year} ・ {project.location}
-                  </p>
-                  <h4
-                    style={{
-                      fontSize: 12,
-                      margin: "15px 0 5px",
-                    }}
-                  >
-                    {project.name}
-                  </h4>
-                  <p
-                    style={{
-                      fontSize: 10,
-                      margin: "0 0 15px",
-                    }}
-                  >
-                    {project.description}
-                  </p>
+                <div>
+                  <img src={projects[4].imgUrl} />
+                  <div className="projectDescription">
+                    <img
+                      style={{ height: 30 }}
+                      src={project.logoUrl}
+                      alt={project.location}
+                    />
+
+                    <p className="robotic">
+                      {project.year} ∙ {project.location}
+                    </p>
+                    <h2>{project.name}</h2>
+                    <p style={{ fontSize: 12 }} id="what">
+                      {project.description}
+                    </p>
+                  </div>
                 </div>
               </div>
             );
           })}
-          <div
-            style={{
-              height: "100px",
-              width: "100vw",
-              border: "4px solid red",
-              display: "inline-block",
-            }}
-          ></div>
         </div>
       </div>
       <div className="selectedProjectsFooter">

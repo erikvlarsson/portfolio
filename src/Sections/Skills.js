@@ -54,7 +54,7 @@ export default function Skills() {
     <section>
       <div className="textContent">
         {/* <h1 className="gradientText purpleGradient">Skills & Specialization</h1> */}
-        <h1 className="gradientText purpleGradient">Skills & Specialization</h1>
+        <h1 className="gradientTextPurple">Skills & Specialization</h1>
       </div>
       <div
         style={{

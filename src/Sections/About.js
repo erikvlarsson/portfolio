@@ -1,28 +1,69 @@
 import React from "react";
-
+import { FaGraduationCap, FaMapMarkerAlt, FaCode } from "react-icons/fa";
+import { AiFillFacebook, AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 export default function About() {
   return (
     <section
       className="about"
       style={{ background: "linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.1))" }}
     >
-      <div className="textContent">
-        <h1>About Me</h1>
-        <h2>
-          I enjoy building beautiful and user-friendly apps for web and mobile.
-        </h2>
+      <img src="face.png" style={{ width: "40vw" }} />
+      <div style={{ display: "inline-block", width: "40vw", padding: "5vw" }}>
+        <h1 className="gradientTextSilver" style={{ margin: 0 }}>
+          About
+        </h1>
+        <p className="robotic" style={{ marginBottom: "20px" }}>
+          UI / UX DESIGNER & DEVELOPER
+        </p>
         <p>
-          My job is to understand what the user wants, and have an intelligently
-          coded interface to provide exactly that. As is the case with any ‘user
-          experience,’ it’s all about enhancing the satisfaction of the
-          consumer. To boil it down to one simple sentence, it’s about keeping
-          the user interested, while providing what ever function your site
-          advertises.
+          Erik is a social and likable person. He is curious and energetic, and
+          with a high motivation to learn, he rarely turns down a new challenge.
+          <br />
+          <br />
+          With an insatiable appetite for efficient code, Erik loves nothing
+          more than lean and optimized solutions — which is an approach he
+          adopts to all of his projects.
+          <br />
+          <br />
+          Erik has a background in System Informatics, but at his core he is a
+          self-taught programmer. With his main focus on UX, he remains
+          analytical throughout the development process; always with the end
+          user in mind.
         </p>
         <ul>
-          <li>Philosophy</li>
-          <li>Experience</li>
+          <li>
+            <div>
+              <FaMapMarkerAlt className="gradientTextSilver" />
+            </div>
+            Based in Malmö, Sweden
+          </li>
+          <li>
+            <div>
+              <FaGraduationCap className="gradientTextSilver" />
+            </div>
+            Student at Lund University
+          </li>
+          <li>
+            <div>
+              <FaCode className="gradientTextSilver" />
+            </div>
+            Advocate for remote work, user data privacy and the open web
+          </li>
         </ul>
+        <div
+          className="iconLinks"
+          style={{ justifyContent: "center", marginTop: "30px" }}
+        >
+          <div>
+            <AiFillLinkedin />
+          </div>
+          <div>
+            <AiFillFacebook />
+          </div>
+          <div>
+            <AiFillGithub />
+          </div>
+        </div>
       </div>
     </section>
   );
