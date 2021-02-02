@@ -47,12 +47,3 @@ footer {
   align-items: center;
   justify-content: center;
 }
-
-#iconLinks {
-  position: absolute;
-  align-self: flex-start;
-}
-
-#iconLinks > div {
-  font-size: 40px;
-}
