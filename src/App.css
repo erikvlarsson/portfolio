@@ -224,6 +224,7 @@
     rgba(239, 0, 215, 1),
     rgba(72, 0, 236, 1)
   );
+
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   z-index: 10;
@@ -488,11 +489,11 @@
 
 .experienceText {
   display: inline-block;
-  margin: 0 auto;
+  /* margin: 0 auto; */
 }
 
 .experienceText p {
-  font-size: 24px;
+  /* font-size: 24px; */
 }
 
 .about ul {
@@ -501,7 +502,16 @@
 .about li {
   display: flex;
   align-items: center;
-  margin: 5px;
+  margin: 10px;
+}
+
+.about li div {
+  padding: 5px;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  color: #191a1b;
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.2), 0 5px 5px -2px black;
 }
 
 .about li,
@@ -532,4 +542,21 @@
 
 #iconLinks > div {
   font-size: 40px;
+}
+
+.experienceGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.exp {
+  margin: 10px;
+  padding: 20px;
+  display: flex;
+  justify-content: flex-start;
+  box-shadow: inset 0 0 1px grey;
+}
+
+.exp > img {
+  margin-right: 30px;
 }

@@ -50,7 +50,10 @@ export default function Home() {
           High-fidelity UI design that performs from every angle. Take a look.
         </p> */}
       </div>
-      <img src="face.png" style={{ height: 400 }} />
+      <img
+        src="https://images.unsplash.com/photo-1512295767273-ac109ac3acfa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
+        style={{ height: 400, position: "absolute", right: 0 }}
+      />
     </section>
   );
 }

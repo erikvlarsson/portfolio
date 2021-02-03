@@ -3,19 +3,20 @@ import React from "react";
 export default function Contact() {
   return (
     <section className="contact">
-      <h1 className="gradientTextSilver">Contact</h1>
+      <h2 className="gradientTextSilver">Contact</h2>
       <div
         style={{
           width: 100,
-          height: 1,
-          background: "white",
-          margin: "20px 0",
+          height: 3,
+          borderRadius: 1,
+          margin: "30px 0",
+          background: "rgba(255, 0, 255, 0.6)",
         }}
       />
-      <div style={{ fontSize: 24 }}>
+      <p style={{ fontSize: 16 }}>
         Whether you are looking to collaborate or need a fresh set of eyes to
         your project, my inbox is open.
-      </div>
+      </p>
       <a
         target="_blank"
         href="http://www.google.com"

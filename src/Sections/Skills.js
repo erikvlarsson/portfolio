@@ -4,8 +4,6 @@ import {
   IoLogoHtml5,
   IoIosImages,
   IoIosPeople,
-  IoLogoJavascript,
-  IoMdBuild,
   IoLogoNodejs,
   IoMdPaper,
 } from "react-icons/io";

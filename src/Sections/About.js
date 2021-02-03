@@ -43,19 +43,19 @@ export default function About() {
         </p>
         <ul>
           <li>
-            <div>
+            <div className="purpleGradient">
               <FaMapMarkerAlt className="gradientTextSilver" />
             </div>
             Based in Malmö, Sweden
           </li>
           <li>
-            <div>
+            <div className="purpleGradient">
               <FaGraduationCap className="gradientTextSilver" />
             </div>
             Student at Lund University
           </li>
           <li>
-            <div>
+            <div className="purpleGradient">
               <FaCode className="gradientTextSilver" />
             </div>
             Advocate for remote work, user data privacy and the open web
