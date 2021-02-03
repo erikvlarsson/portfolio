@@ -34,7 +34,10 @@ export default function Contact() {
           erikvlarsson1@gmail.com
         </div>
       </a>
-      <img src="signature.png" style={{ margin: "0 auto", width: "200px" }} />
+      <img
+        src="signature.png"
+        style={{ margin: "0 auto", width: "150px", paddingLeft: 10 }}
+      />
     </section>
   );
 }
