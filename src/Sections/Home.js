@@ -1,16 +1,13 @@
 import React from "react";
-import Header from "../Components/Header";
+import E from "../Components/E";
 
 export default function Home() {
   return (
     <section className="home">
       {/* <Header /> */}
       {/* <h1>I'm Erik, a UX Designer from Malmö.</h1> */}
+
       <div className="textContent">
-        <img
-          src="http://www.jonathanpatterson.com/images/j-icon.svg"
-          style={{ height: 50 }}
-        />
         <h1>
           <div style={{ marginBottom: "10px" }} className="gradientTextSilver">
             Hey. I'm Erik.
@@ -50,10 +47,22 @@ export default function Home() {
           High-fidelity UI design that performs from every angle. Take a look.
         </p> */}
       </div>
-      <img
-        src="https://images.unsplash.com/photo-1512295767273-ac109ac3acfa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
-        style={{ height: 400, position: "absolute", right: 0 }}
-      />
+      <div
+        className="lentil"
+        style={{
+          width: 140,
+          height: 140,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          padding: "10px",
+          borderRadius: "50%",
+          margin: 10,
+          background: "linear-gradient(white, grey)",
+        }}
+      >
+        <E />
+      </div>
     </section>
   );
 }

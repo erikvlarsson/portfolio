@@ -318,11 +318,11 @@
 
 .glass {
   width: 160%;
-  height: 350px;
+  height: 30vw;
   opacity: 0.03;
   background: linear-gradient(white, rgba(255, 255, 255, 0.7));
   position: absolute;
-  top: -100px;
+  top: -10vw;
   left: -200px;
   z-index: 9;
   border-radius: 50%;
@@ -593,6 +593,12 @@
 
 .skill {
   background: rgba(255, 255, 255, 0.05);
-  box-shadow: inset 0 0 2px rgba(255, 255, 255, 0.3), 0 10px 10px -3px black;
+  box-shadow: inset 0 0 2px rgba(255, 255, 255, 0.3),
+    0 10px 10px -3px rgba(0, 0, 0, 0.5);
   padding: 30px 30px 50px 30px;
+}
+
+.lentil {
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.2),
+    0 10px 5px -5px rgba(0, 0, 0, 0.2);
 }
