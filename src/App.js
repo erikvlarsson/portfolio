@@ -24,17 +24,11 @@ function App() {
   } else {
     return (
       <div className="App">
-        {/* <MobileHeader pageIndex={pageIndex} setPageIndex={setPageIndex} /> */}
-        {/* <Header pageIndex={pageIndex} setPageIndex={setPageIndex} /> */}
-        {/* <Content pageIndex={pageIndex} /> */}
-        {/* <Spinner /> */}
         <Home />
         <SelectedWorks />
         <About />
-        {/* <Work /> */}
-        <Experience />
+        {/* <Experience /> */}
         <Skills />
-        {/* <More /> */}
         <Contact />
         <Footer />
       </div>

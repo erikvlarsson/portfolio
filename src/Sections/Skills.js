@@ -58,13 +58,13 @@ export default function Skills() {
         style={{
           display: "grid",
           gridTemplateColumns: "1fr 1fr 1fr",
-          columnGap: "5%",
-          rowGap: "50px",
+          columnGap: "2vw",
+          rowGap: "20px",
         }}
       >
         {skills.map((skill) => {
           return (
-            <div>
+            <div className="skill">
               <div
                 style={{
                   display: "flex",

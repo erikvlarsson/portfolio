@@ -137,7 +137,7 @@ export default function SelectedWorks() {
         </div>
         <div
           className="scrollableWrapper"
-          onMomentumScrollEnd={() => alert("scroleld!")}
+          onMomentumScrollEnd={() => alert("scrolld!")}
           ref={wrapperRef}
         >
           {projects.map((project, i) => {

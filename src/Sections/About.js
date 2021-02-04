@@ -7,18 +7,9 @@ export default function About() {
       className="about"
       style={{ background: "linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.1))" }}
     >
-      <div id="iconLinks">
-        <div>
-          <AiFillLinkedin />
-        </div>
-        <div>
-          <AiFillFacebook />
-        </div>
-        <div>
-          <AiFillGithub />
-        </div>
+      <div id="faceWrapper">
+        <img src="face.png" />
       </div>
-      <img src="face.png" style={{ width: "35vw" }} />
       <div style={{ display: "inline-block", width: "40vw", padding: "0 5vw" }}>
         <h2 className="gradientTextSilver" style={{ margin: 0 }}>
           About
