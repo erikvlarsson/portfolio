@@ -181,6 +181,7 @@ export default function SelectedWorks() {
             );
           })}
         </div>
+        <div class="glass"></div>
       </div>
     </section>
   );

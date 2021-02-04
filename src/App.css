@@ -276,8 +276,6 @@
   margin: 50px 0 0 150px;
 }
 
-
-
 .projects > .topLayer {
   position: absolute;
   display: flex;
@@ -307,6 +305,8 @@
 }
 
 .projects {
+  position: relative;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -314,6 +314,18 @@
   width: 100%;
   background: rgba(255, 255, 255, 0.05);
   box-shadow: inset 0 0 2px rgba(255, 255, 255, 0.3), 0 10px 10px -3px black;
+}
+
+.glass {
+  width: 160%;
+  height: 350px;
+  opacity: 0.03;
+  background: linear-gradient(white, rgba(255, 255, 255, 0.7));
+  position: absolute;
+  top: -100px;
+  left: -200px;
+  z-index: 9;
+  border-radius: 50%;
 }
 
 .scrollableWrapper {
