@@ -22,9 +22,9 @@ export default function About() {
           with a high motivation to learn, he rarely turns down a new challenge.
           <br />
           <br />
-          With an insatiable appetite for efficient code, Erik loves nothing
-          more than lean and optimized solutions — which is an approach he
-          adopts to all of his projects.
+          With an insatiable appetite for efficient code, I love nothing more
+          than lean and optimized solutions — which is an approach I adopt to
+          all of my projects.
           <br />
           <br />
           Erik has a background in System Informatics, but at his core he is a

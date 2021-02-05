@@ -67,7 +67,7 @@ const allProjects = [
     imgUrl:
       "https://cutewallpaper.org/21/number-6-wallpaper/Six-Wallpapers-Wallpaper-Cave.jpg",
     logoUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/368px-Google_2015_logo.svg.png",
+      "http://www.napopittsburgh.org/wp-content/uploads/2018/10/ikea-logo.png",
   },
 ];
 

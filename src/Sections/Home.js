@@ -8,6 +8,13 @@ export default function Home() {
       {/* <h1>I'm Erik, a UX Designer from Malmö.</h1> */}
 
       <div className="textContent">
+        <E
+          style={{
+            transform: "scale(0.9)",
+            marginTop: "-100px",
+            marginBottom: "20px",
+          }}
+        />
         <h1>
           <div style={{ marginBottom: "10px" }} className="gradientTextSilver">
             Hey. I'm Erik.
@@ -16,13 +23,13 @@ export default function Home() {
             I craft user-friendly experiences with lean, scalable code.
           </div>
         </h1>
-        <div style={{ border: "5px dotted rgba(0,0,0,0.3)", padding: 5 }}></div>
         <div
           style={{
             fontSize: "8px",
             color: "rgba(255,255,255,0.5)",
             fontWeight: 300,
             letterSpacing: 0.5,
+            position: "absolute",
           }}
         >
           All trademarks, product names and logos in this portfolio are property
@@ -47,22 +54,14 @@ export default function Home() {
           High-fidelity UI design that performs from every angle. Take a look.
         </p> */}
       </div>
-      <div
-        className="lentil"
+      <E
         style={{
-          width: 140,
-          height: 140,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          padding: "10px",
-          borderRadius: "50%",
-          margin: 10,
-          background: "linear-gradient(white, grey)",
+          marginTop: "-300px",
+          marginLeft: "100px",
+          transform: "scale(25)",
+          opacity: 0.02,
         }}
-      >
-        <E />
-      </div>
+      />
     </section>
   );
 }
