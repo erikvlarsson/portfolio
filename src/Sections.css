@@ -1,12 +1,12 @@
 section {
   width: 100%;
-  padding: 69px 5%;
+  padding: 50px 5%;
 }
 
 footer {
   display: flex;
   width: 100%;
-  padding: 0 5%;
+  padding: 0 5% 30px 5%;
   justify-content: space-between;
   align-items: center;
 }

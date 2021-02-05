@@ -11,16 +11,16 @@ export default function Home() {
         <E
           style={{
             transform: "scale(0.9)",
-            marginTop: "-100px",
+            marginTop: "-50px",
             marginBottom: "20px",
           }}
         />
         <h1>
-          <div style={{ marginBottom: "10px" }} className="gradientTextSilver">
-            Hey. I'm Erik.
+          <div style={{ paddingBottom: "10px" }} className="gradientTextSilver">
+            Hi! I'm Erik.
           </div>
-          <div className="gradientTextPurple">
-            I craft user-friendly experiences with lean, scalable code.
+          <div className="gradientTextPurple" style={{ paddingBottom: 10 }}>
+            I turn great ideas into great experiences with lean, efficient code.
           </div>
         </h1>
         <div
@@ -38,14 +38,7 @@ export default function Home() {
         {/* <h2>
           I enjoy building beautiful and user-friendly apps for web and mobile.
         </h2>
-        <p>
-          My job is to understand what the user wants, and have an intelligently
-          coded interface to provide exactly that. As is the case with any ‘user
-          experience,’ it’s all about enhancing the satisfaction of the
-          consumer. To boil it down to one simple sentence, it’s about keeping
-          the user interested, while providing what ever function your site
-          advertises.
-        </p> */}
+
         {/* <p>
           Delightful product design is like light traveling through a prism. The
           catalyst; raw project requirements. I filter them through my creative

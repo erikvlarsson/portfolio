@@ -18,19 +18,21 @@ export default function About() {
           UI / UX DESIGNER & DEVELOPER
         </p>
         <p>
-          Erik is a social and likable person. He is curious and energetic, and
-          with a high motivation to learn, he rarely turns down a new challenge.
+          I'm a Malmö based developer with over{" "}
+          {new Date().getFullYear() - 2014} years of experience in programming.
+          I have worked with a variety of people, ranging from visionary
+          startups to to large tech companies with ambitious goals.
           <br />
           <br />
-          With an insatiable appetite for efficient code, I love nothing more
-          than lean and optimized solutions — which is an approach I adopt to
-          all of my projects.
+          With an insatiable appetite for lean and efficient solutions, I love
+          nothing more than the process of turning great ideas into great
+          products.
           <br />
           <br />
-          Erik has a background in System Informatics, but at his core he is a
-          self-taught programmer. With his main focus on UX, he remains
-          analytical throughout the development process; always with the end
-          user in mind.
+          My job is to understand what the user wants, and have an intelligently
+          coded interface to provide exactly that. To boil it down to one simple
+          sentence, it’s about keeping the user interested, while providing
+          whatever function your site advertises.
         </p>
         <ul>
           <li>
