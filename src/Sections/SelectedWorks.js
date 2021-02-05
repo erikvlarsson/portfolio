@@ -1,13 +1,12 @@
 import React, { useState, useRef, useEffect, useCallback } from "react";
 import { BsChevronRight, BsChevronLeft } from "react-icons/bs";
-import Wave from "../Components/Wave";
 
 const allProjects = [
   {
     i: 0,
     name: "My first website",
     description:
-      "I built my first site (and taught myself how to design and code) by reverse-engineering sites that I admired.",
+      "Initially, I just wanted to prank my friends by editing the html-markup and the text content of various posts on the web. But what started out as a prank would eventually grow into a lifelong passion. Soon, I built my first websites (and taught myself how to code) by reverse-engineering sites that I admired.",
     year: 2014,
     location: "Malmö, Sweden",
     imgUrl:
