@@ -51,7 +51,7 @@ export default function Home() {
         style={{
           marginTop: "-300px",
           marginLeft: "100px",
-          transform: "scale(25)",
+          transform: "scale(20)",
           opacity: 0.02,
         }}
       />

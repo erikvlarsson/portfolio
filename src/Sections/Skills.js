@@ -86,7 +86,7 @@ export default function Skills() {
                 </div>
               </div>
               <h3>{skill.title}</h3>
-              <p style={{ color: "rgba(255,255,255,0.6)", fontWeight: 400 }}>
+              <p style={{ color: "rgba(255,255,255,0.6)" }}>
                 {skill.description}
               </p>
             </div>

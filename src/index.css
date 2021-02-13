@@ -44,6 +44,12 @@ h4 {
 p {
   font-size: 12px;
   margin: 0;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+li {
+  font-weight: 400;
 }
 
 .textContent {

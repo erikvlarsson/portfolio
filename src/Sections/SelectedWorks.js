@@ -3,75 +3,76 @@ import { BsChevronRight, BsChevronLeft } from "react-icons/bs";
 
 const allProjects = [
   {
-    i: 0,
     name: "My first website",
-    description:
-      "Initially, I just wanted to prank my friends by editing the html-markup and the text content of various posts on the web. But what started out as a prank would eventually grow into a lifelong passion. Soon, I built my first websites (and taught myself how to code) by reverse-engineering sites that I admired.",
+    description: [
+      "My first interaction with code started out as a prank. I learned how to edit the html-markup and the text content of various posts on the web, which allowed for hilarious jokes among my friends.",
+      "But what started out as a prank would eventually grow into a lifelong passion. Soon, I built my first websites (and taught myself how to code) by reverse-engineering sites that I admired.",
+      "I incrementally learned more JavaScript and programming logic, and later picked up frameworks like React and React Native.",
+    ],
     year: 2014,
     location: "Malmö, Sweden",
     imgUrl:
-      "https://i.pinimg.com/originals/0d/84/c3/0d84c3f9be1fc2e07377893e80bee3a0.png",
-    logoUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/368px-Google_2015_logo.svg.png",
+      "https://i.pinimg.com/originals/98/d4/ca/98d4ca2ca0f81ae9dafae122427be1c3.png",
+    logoUrl: "icon.png",
   },
   {
-    i: 1,
-    name: "Frontend Developer",
-    description: "What I did at Arborot AB",
+    name: "Primal Native",
+    description: [],
+    year: 2019,
+    location: "Malmö, Sweden",
+    imgUrl:
+      "https://i.pinimg.com/originals/98/d4/ca/98d4ca2ca0f81ae9dafae122427be1c3.png",
+    logoUrl: "icon.png",
+  },
+  {
+    name: "Arborot",
+    description: [],
     year: 2020,
     location: "Malmö, Sweden",
     imgUrl:
-      "https://99designs-blog.imgix.net/blog/wp-content/uploads/2018/04/2x-en.png?auto=format&q=60&fit=max&w=930",
-    logoUrl: "http://www.arborot.se/arborotLogo.png",
+      "https://i.pinimg.com/originals/98/d4/ca/98d4ca2ca0f81ae9dafae122427be1c3.png",
+    logoUrl: "Arborot-logo.png",
   },
   {
-    i: 2,
-    name: "Consultant",
-    description: "What I did at S9",
+    name: "Gameboard Auth",
+    description: [],
     year: 2020,
     location: "Malmö, Sweden",
     imgUrl:
-      "https://www.appdesignvault.com/wp-content/uploads/2013/06/flat-ui-login-iphone-1.png",
-    logoUrl:
-      "https://jobtip.imgix.net/images/img_5d1f1ffb8208d.png?h=610&w=400",
+      "https://i.pinimg.com/originals/98/d4/ca/98d4ca2ca0f81ae9dafae122427be1c3.png",
+    logoUrl: "icon.png",
   },
   {
-    i: 3,
-    name: "Freelance",
-    description:
-      "Worked as a freelance consultant in building and optimizing small company websites.",
-    year: 2021,
+    name: "Web Development",
+    description: ["Web Development Consultancy"],
+    year: 2020,
     location: "Malmö, Sweden",
-    imgUrl: "https://wallpapercave.com/wp/wp2163915.jpg",
-    logoUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/368px-Google_2015_logo.svg.png",
+    imgUrl:
+      "https://i.pinimg.com/originals/98/d4/ca/98d4ca2ca0f81ae9dafae122427be1c3.png",
+    logoUrl: "S9-logo.png",
   },
   {
-    i: 4,
-    name: "Portfolio Designer",
-    description: "Building this shit",
+    name: "Front-end Developer for Native Sales System",
+    description: [],
+    year: 2020,
+    location: "Malmö, Sweden",
+    imgUrl:
+      "https://i.pinimg.com/originals/98/d4/ca/98d4ca2ca0f81ae9dafae122427be1c3.png",
+    logoUrl: "S9-logo.png",
+  },
+  {
+    name: "Full-Stack JavaScript Developer",
+    description: [],
     year: 2021,
     location: "Malmö, Sweden",
     imgUrl:
       "https://i.pinimg.com/originals/98/d4/ca/98d4ca2ca0f81ae9dafae122427be1c3.png",
-    logoUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/368px-Google_2015_logo.svg.png",
-  },
-  {
-    i: 5,
-    name: "Gameboard",
-    description: "Building this shit",
-    year: 2021,
-    location: "Malmö, Sweden",
-    imgUrl:
-      "https://cutewallpaper.org/21/number-6-wallpaper/Six-Wallpapers-Wallpaper-Cave.jpg",
-    logoUrl:
-      "http://www.napopittsburgh.org/wp-content/uploads/2018/10/ikea-logo.png",
+    logoUrl: "IKEAlogo.png",
   },
 ];
 
 export default function SelectedWorks() {
-  const [index, setIndex] = useState(0);
+  const [index, setIndex] = useState(5);
   const [prevIndex, setPrevIndex] = useState(null);
   const [projects, setProjects] = useState(allProjects);
   const wrapperRef = useRef(null);
@@ -140,16 +141,15 @@ export default function SelectedWorks() {
           ref={wrapperRef}
         >
           {projects.map((project, i) => {
-            let className =
-              project.i === index ? "project projectActive" : "project";
+            let className = i === index ? "project projectActive" : "project";
             return (
               <div
                 className={className}
-                ref={project.i === index ? targetSlideRef : null}
+                ref={i === index ? targetSlideRef : null}
                 onClick={() => handleScroll(i)}
               >
                 <div>
-                  <img src={projects[4].imgUrl} />
+                  <img src={projects[0].imgUrl} />
                   <div className="projectDescription">
                     <img
                       style={{ height: 30 }}
@@ -161,9 +161,9 @@ export default function SelectedWorks() {
                       {project.year} ∙ {project.location}
                     </p>
                     <h3>{project.name}</h3>
-                    <p style={{ fontSize: 12 }} id="what">
-                      {project.description}
-                    </p>
+                    {project.description.map((paragraph) => {
+                      return <p>{paragraph}</p>;
+                    })}
                   </div>
                 </div>
               </div>
