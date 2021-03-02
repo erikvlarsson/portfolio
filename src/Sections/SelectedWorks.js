@@ -5,9 +5,8 @@ const allProjects = [
   {
     name: "My first website",
     description: [
-      "My first interaction with code started out as a prank. I learned how to edit the html-markup and the text content of various posts on the web, which allowed for hilarious jokes among my friends.",
-      "But what started out as a prank would eventually grow into a lifelong passion. Soon, I built my first websites (and taught myself how to code) by reverse-engineering sites that I admired.",
-      "I incrementally learned more JavaScript and programming logic, and later picked up frameworks like React and React Native.",
+      "My first interaction with code started out as a prank. I learned how to edit the html-markup and the text content of various posts on the web, which allowed for hilarious jokes among my friends. At the time I did not know, but what started out as a prank would eventually grow into a lifelong passion. ",
+      "Soon, I built my first websites (and taught myself how to code) by reverse-engineering sites that I admired. I incrementally learned more and more JavaScript, and eventually continued to pick up frameworks like React and React Native along with backend programming in Node.",
     ],
     year: 2014,
     location: "Malmö, Sweden",
@@ -25,8 +24,11 @@ const allProjects = [
     logoUrl: "icon.png",
   },
   {
-    name: "Arborot",
-    description: [],
+    name: "Freelance Web Developer",
+    description: [
+      "During summer 2020, I built a small company website from the ground up using JavaScript and React. The website was built to promote business opportunies and for providing a medium for news sharing.",
+      "I built a simple admin interface for monitoring visitor data, and the project also included working with basic search engine optimization.",
+    ],
     year: 2020,
     location: "Malmö, Sweden",
     imgUrl:
@@ -43,8 +45,11 @@ const allProjects = [
     logoUrl: "icon.png",
   },
   {
-    name: "Web Development",
-    description: ["Web Development Consultancy"],
+    name: "Front-end Trainee",
+    description: [
+      "During the end of 2020 (and mid-pandemic) I was fortunate to land an internship at Strategic 9, a software consultancy firm in Malmö. I was given the opportunity to surround myself with, and learn from very competent colleagues.",
+      "I completed various challenging tasks ranging from in-house projects to making adjustments to the company website — all of which helped me further hone my skills in web development.",
+    ],
     year: 2020,
     location: "Malmö, Sweden",
     imgUrl:
@@ -53,7 +58,10 @@ const allProjects = [
   },
   {
     name: "Front-end Developer for Native Sales System",
-    description: [],
+    description: [
+      "Building a web based cloud native sales system. The customer's sales process required that the system supported usage from both computers and tablets. The front-end was deployed to Azure as a Static Web App using GitHub Actions and the backend was deployed to Azure App Services using Azure DevOps.",
+      "With the guidance of a senior full stack developer, I took on the task of developing the complete front-end using JavaScript, React and Google's Material Design.",
+    ],
     year: 2020,
     location: "Malmö, Sweden",
     imgUrl:

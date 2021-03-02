@@ -35,17 +35,6 @@ export default function Home() {
           All trademarks, product names and logos in this portfolio are property
           of their respective owners.
         </div>
-        {/* <h2>
-          I enjoy building beautiful and user-friendly apps for web and mobile.
-        </h2>
-
-        {/* <p>
-          Delightful product design is like light traveling through a prism. The
-          catalyst; raw project requirements. I filter them through my creative
-          process, twisting… as ideas take shape. Turning… as core design
-          principles intersect with today’s best practices. The result?
-          High-fidelity UI design that performs from every angle. Take a look.
-        </p> */}
       </div>
       <E
         style={{
